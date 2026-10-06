@@ -1,0 +1,8 @@
+{"id":"sentiment-001","task":"classification","input":"The setup was quick and painless.","reference":"positive","annotation":"positive"}
+{"id":"sentiment-002","task":"classification","input":"The update deleted my saved filters.","reference":"negative","annotation":"neutral"}
+{"id":"topics-001","task":"multilabel","input":"I was charged twice and need this fixed today.","reference":["billing","urgent"],"annotation":["billing"]}
+{"id":"entities-001","task":"span","input":"The buyer Alice signed in Paris.","reference":[{"start":10,"end":15,"label":"PERSON","text":"Alice"},{"start":26,"end":31,"label":"LOCATION","text":"Paris"}],"annotation":[{"start":10,"end":15,"label":"PERSON","text":"Alice"}]}
+{"id":"summary-001","task":"free_text","input":"A customer reports two identical charges and asks for one to be refunded.","reference":"Customer requests a refund for a duplicate charge.","annotation":"Customer wants a refund because a charge was duplicated."}
+{"id":"repeat-001","group_id":"refund-intent","task":"classification","input":"Please return the extra payment.","reference":"refund","annotation":"refund"}
+{"id":"repeat-002","group_id":"refund-intent","task":"classification","input":"Please return the extra payment.","reference":"refund","annotation":"billing_question"}
+{"id":"entities-002","task":"span","input":"Email Ava tomorrow.","reference":[{"start":6,"end":9,"label":"PERSON","text":"Ava"}],"annotation":[{"start":6,"end":12,"label":"PERSON","text":"Ava"}]}

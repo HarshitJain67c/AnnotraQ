@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AnnotraQ annotation quality benchmark report">
+  <title>Benchmark report for benchmark.jsonl</title>
+  <style>
+    :root { --ink:#151625; --muted:#666a7c; --paper:#f6f7fb; --card:#fff; --line:#e5e7f0; --brand:#6757e7; --brand2:#31b7a4; --danger:#d84b63; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    .wrap { width:min(1180px,calc(100% - 32px)); margin:0 auto; }
+    header { color:#fff; background:linear-gradient(125deg,#1f174b,#4936c7 58%,#179b91); padding:58px 0 72px; }
+    .eyebrow { margin:0 0 10px; color:#cfc9ff; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(32px,6vw,58px); line-height:1; letter-spacing:-.04em; }
+    header p { max-width:680px; margin:18px 0 0; color:#ebeaff; font-size:17px; }
+    main { margin-top:-38px; padding-bottom:48px; }
+    .hero-card,.panel,.metric { background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:0 10px 35px rgba(27,24,68,.07); }
+    .hero-card { display:grid; grid-template-columns:190px 1fr; gap:28px; align-items:center; padding:26px; }
+    .score { display:grid; place-items:center; width:150px; height:150px; border-radius:50%; background:conic-gradient(var(--brand) 61.0%,#e9e8f4 0); position:relative; }
+    .score::after { content:""; position:absolute; inset:13px; background:#fff; border-radius:50%; }
+    .score strong { z-index:1; font-size:35px; letter-spacing:-.05em; }
+    .score small { z-index:1; margin-top:-48px; color:var(--muted); }
+    .summary h2 { margin:0 0 4px; font-size:30px; }
+    .summary p { margin:5px 0; color:var(--muted); }
+    .grade { display:inline-grid; min-width:30px; place-items:center; border-radius:999px; padding:3px 9px; font-weight:800; }
+    .excellent { color:#116d60; background:#ddf7f0; } .good { color:#3d319e; background:#ebe8ff; }
+    .warning { color:#8e5d00; background:#fff1cb; } .poor { color:#9f243a; background:#ffe1e7; }
+    .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:22px 0; }
+    .metric { padding:18px; box-shadow:none; } .metric-label { color:var(--muted); font-size:13px; }
+    .metric-value { margin:4px 0 10px; font-size:28px; font-weight:800; }
+    .bar { height:7px; overflow:hidden; background:#ececf4; border-radius:99px; } .bar span { display:block; height:100%; background:linear-gradient(90deg,var(--brand),var(--brand2)); }
+    .panel { margin-top:18px; padding:22px; overflow:hidden; box-shadow:none; }
+    h3 { margin:0 0 14px; font-size:20px; } .table-wrap { overflow:auto; }
+    table { width:100%; border-collapse:collapse; white-space:nowrap; }
+    th,td { padding:11px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:var(--muted); font-size:12px; letter-spacing:.05em; text-transform:uppercase; }
+    td:last-child { max-width:360px; white-space:normal; } .number { font-variant-numeric:tabular-nums; }
+    code { color:#4032a7; background:#f0eefe; border-radius:5px; padding:2px 5px; }
+    footer { padding:4px 0 36px; color:var(--muted); font-size:13px; }
+    @media (max-width:760px) { .hero-card { grid-template-columns:1fr; } .score { margin:auto; } .metrics { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:430px) { .metrics { grid-template-columns:1fr; } .wrap { width:min(100% - 20px,1180px); } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><p class="eyebrow">Annotation quality intelligence</p><h1>AnnotraQ</h1><p>Benchmark report for benchmark.jsonl</p></div></header>
+  <main class="wrap">
+    <section class="hero-card">
+      <div class="score"><strong>61.0</strong><small>/ 100</small></div>
+      <div class="summary">
+        <h2>Grade <span class="grade warning">D</span></h2>
+        <p>8 annotations · 95% bootstrap interval 39.38–79.45</p>
+        <p>Weights: accuracy 60%, completeness 20%, consistency 10%, format validity 10%</p>
+      </div>
+    </section>
+    <section class="metrics">
+        <article class="metric">
+          <div class="metric-label">Accuracy</div>
+          <div class="metric-value">49.0</div>
+          <div class="bar"><span style="width:49.0%"></span></div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-label">Completeness</div>
+          <div class="metric-value">70.3</div>
+          <div class="bar"><span style="width:70.3%"></span></div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-label">Consistency</div>
+          <div class="metric-value">87.5</div>
+          <div class="bar"><span style="width:87.5%"></span></div>
+        </article>
+
+        <article class="metric">
+          <div class="metric-label">Format Validity</div>
+          <div class="metric-value">87.5</div>
+          <div class="bar"><span style="width:87.5%"></span></div>
+        </article>
+        </section>
+    <section class="panel"><h3>Performance by task</h3><div class="table-wrap"><table><thead><tr><th>Task</th><th>Items</th><th>Score</th><th>Grade</th></tr></thead><tbody><tr><td>Classification</td><td>4</td><td>67.50</td><td><span class='grade warning'>D</span></td></tr><tr><td>Free Text</td><td>1</td><td>67.79</td><td><span class='grade warning'>D</span></td></tr><tr><td>Multilabel</td><td>1</td><td>70.00</td><td><span class='grade warning'>C</span></td></tr><tr><td>Span</td><td>2</td><td>40.00</td><td><span class='grade poor'>F</span></td></tr></tbody></table></div></section>
+    <section class="panel"><h3>Item-level audit</h3><div class="table-wrap"><table><thead><tr><th>ID</th><th>Task</th><th>Score</th><th>Grade</th><th>Accuracy</th><th>Complete</th><th>Consistent</th><th>Format</th><th>Issues</th></tr></thead><tbody>
+        <tr>
+          <td><code>sentiment-001</code></td>
+          <td>Classification</td>
+          <td class="number">100.00</td>
+          <td><span class="grade excellent">A</span></td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>sentiment-002</code></td>
+          <td>Classification</td>
+          <td class="number">40.00</td>
+          <td><span class="grade poor">F</span></td>
+          <td class="number">0.0</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>topics-001</code></td>
+          <td>Multilabel</td>
+          <td class="number">70.00</td>
+          <td><span class="grade warning">C</span></td>
+          <td class="number">66.7</td>
+          <td class="number">50.0</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>entities-001</code></td>
+          <td>Span</td>
+          <td class="number">70.00</td>
+          <td><span class="grade warning">C</span></td>
+          <td class="number">66.7</td>
+          <td class="number">50.0</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>summary-001</code></td>
+          <td>Free Text</td>
+          <td class="number">67.79</td>
+          <td><span class="grade warning">D</span></td>
+          <td class="number">58.8</td>
+          <td class="number">62.5</td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>repeat-001</code></td>
+          <td>Classification</td>
+          <td class="number">95.00</td>
+          <td><span class="grade excellent">A</span></td>
+          <td class="number">100.0</td>
+          <td class="number">100.0</td>
+          <td class="number">50.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>repeat-002</code></td>
+          <td>Classification</td>
+          <td class="number">35.00</td>
+          <td><span class="grade poor">F</span></td>
+          <td class="number">0.0</td>
+          <td class="number">100.0</td>
+          <td class="number">50.0</td>
+          <td class="number">100.0</td>
+          <td>—</td>
+        </tr>
+
+        <tr>
+          <td><code>entities-002</code></td>
+          <td>Span</td>
+          <td class="number">10.00</td>
+          <td><span class="grade poor">F</span></td>
+          <td class="number">0.0</td>
+          <td class="number">0.0</td>
+          <td class="number">100.0</td>
+          <td class="number">0.0</td>
+          <td>annotation: span 0 text does not match input[6:12]</td>
+        </tr>
+        </tbody></table></div></section>
+  </main>
+  <footer class="wrap">Generated by AnnotraQ · {&quot;schema_version&quot;: &quot;1.0&quot;, &quot;generated_at&quot;: &quot;2026-10-06T04:04:55.421609Z&quot;}</footer>
+</body>
+</html>

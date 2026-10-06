@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "annotraq"
+version = "0.1.0"
+description = "Transparent benchmarking for AI-generated data annotations"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "AnnotraQ contributors"}]
+keywords = ["data-annotation", "evaluation", "benchmarking", "machine-learning", "quality"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+annotraq = "annotraq.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["annotraq*"]
